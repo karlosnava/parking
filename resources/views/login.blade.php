@@ -6,8 +6,8 @@
 		<form method="POST">
 			@csrf
 		
-			<div class="bg-white shadow-md rounded px-8 pb-8">
-				<img src="{{ asset('img/logo.png') }}" class="w-1/4 my-5 mx-auto" alt="Logo InterWap">
+			<div class="bg-white shadow-md rounded px-8 py-8">
+				<img src="{{ asset('img/logo.png') }}" class="w-1/4 mb-5 mx-auto" alt="Logo InterWap">
 
 		    <div class="mb-4">
 		      <label class="block text-grey-darker text-sm font-bold mb-2" for="email">
