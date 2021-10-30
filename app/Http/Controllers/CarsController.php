@@ -12,7 +12,7 @@ class CarsController extends Controller
 
 	public function index()
 	{
-		$cars = Car::all();
+		$cars = Car::orderBy('created_at', 'desc')->get();
 		return view('admin.index', compact('cars'));
 	}
 
@@ -34,7 +34,7 @@ class CarsController extends Controller
 
 		return redirect()
 			->route('cars.edit', $car)
-			->with('info', 'La auto se registró con éxito.');;
+			->with('info', 'La vehículo se registró con éxito.');;
 	}
 
 	public function edit($id)
@@ -58,7 +58,7 @@ class CarsController extends Controller
 
 		return redirect()
 			->route('cars.edit', $car)
-			->with('info', 'La auto se actualizó con éxito.');
+			->with('info', 'La vehículo se actualizó con éxito.');
 	}
 
 	public function destroy(Request $request, $id)
@@ -66,5 +66,11 @@ class CarsController extends Controller
 		Car::destroy($id);
 
 		return redirect()->route('cars.index');
+	}
+
+
+	public function export()
+	{
+		return view('export');
 	}
 }

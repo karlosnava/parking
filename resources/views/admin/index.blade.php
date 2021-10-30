@@ -3,6 +3,10 @@
 @section('content')
 	<div class="w-9/12 mx-auto my-10">
 
+		<div class="my-8">
+			<a href="{{ route('cars.create') }}" class="text-blue-500 border-2 border-blue-500 px-5 py-3 rounded-md text-sm hover:bg-blue-500 hover:text-white">Registrar nuevo veículo</a>
+		</div>
+
 		<div class="grid grid-cols-4 gap-4 md:grid-cols-3 sm:grid-cols-1">
 			@foreach($cars as $car)
 				<div class="bg-white py-3 px-5 shadow-md">

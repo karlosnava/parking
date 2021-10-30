@@ -33,7 +33,6 @@
 				<div>
 					<select name="status" class="w-100">
 						<option value="1" {{ old('status') == 1 ? 'selected' : '' }}>En el parqueadero</option>
-						<option value="2" {{ old('status') == 2 ? 'selected' : '' }}>Fuera del parqueadero</option>
 					</select>
 					@error('status') <small class="text-red-500">{{ $message }}</small> @enderror
 				</div>
