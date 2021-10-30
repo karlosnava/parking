@@ -16,3 +16,4 @@ Route::delete('car/{id}', [CarsController::class, 'destroy'])->name('cars.destro
 
 // EXPORT
 Route::get('export', [CarsController::class, 'export'])->name('export');
+Route::post('export', [CarsController::class, 'downloadExcel'])->name('download');

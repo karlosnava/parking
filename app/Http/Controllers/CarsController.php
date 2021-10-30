@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 // MODELS
 use App\Models\Car;
 
+// EXCEL
+use App\Exports\CarsExport;
+
 class CarsController extends Controller
 {
 
@@ -71,6 +74,22 @@ class CarsController extends Controller
 
 	public function export()
 	{
-		return view('export');
+		$firstCar = Car::orderBy('created_at', 'asc')->first();
+		$lastCar = Car::orderBy('created_at', 'desc')->first();
+
+		return view('export', compact(['firstCar', 'lastCar']));
+	}
+
+	public function downloadExcel(Request $request)
+	{
+		$request->validate([
+			'start_date' => ['required'],
+			'end_date'   => ['required']
+		]);
+
+		$start_date = date('Y-m-d H:i:s', strtotime(str_replace('-', '/', $request['start_date'])));
+		$end_date = date('Y-m-d 23:59:59', strtotime(str_replace('-', '/', $request['end_date'])));
+
+		return (new CarsExport($start_date, $end_date))->download('vehiculos.xlsx');
 	}
 }

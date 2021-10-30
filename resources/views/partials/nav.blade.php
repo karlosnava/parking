@@ -14,7 +14,7 @@
 				@guest
 					<a href="login" class="py-2 px-3 font-medium text-gray-500 rounded hover:bg-green-500 hover:text-white transition duration-300">Iniciar sesión</a>
 				@else
-					<form action="logout" method="POST">
+					<form action="/logout" method="POST">
 						@csrf
 						<button class="text-gray-500">Cerrar sesión</button>
 					</form>

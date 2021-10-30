@@ -3,8 +3,13 @@
 @section('content')
 	<div class="w-9/12 mx-auto my-10">
 
-		<div class="my-8">
-			<a href="{{ route('cars.create') }}" class="text-blue-500 border-2 border-blue-500 px-5 py-3 rounded-md text-sm hover:bg-blue-500 hover:text-white">Registrar nuevo veículo</a>
+		<div class="my-8 flex items-center">
+			<div>
+				<a href="{{ route('cars.create') }}" class="text-blue-500 border-2 border-blue-500 px-5 py-3 rounded-md text-sm hover:bg-blue-500 hover:text-white">Registrar nuevo veículo</a>
+			</div>
+			<div class="ml-3">
+				<a href="{{ route('export') }}" class="text-indigo-500 border-2 border-indigo-500 px-5 py-3 rounded-md text-sm hover:bg-indigo-500 hover:text-white">Exportar</a>
+			</div>
 		</div>
 
 		<div class="grid grid-cols-4 gap-4 md:grid-cols-3 sm:grid-cols-1">
