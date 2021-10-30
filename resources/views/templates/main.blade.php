@@ -8,7 +8,9 @@
 	<link rel="stylesheet" href="{{ asset('css/app.css') }}">
 	@yield('css')
 </head>
-<body>
+<body class="bg-gray-100">
+	@include('partials.nav')
+
 	@yield('content')
 
 	@yield('js')

@@ -13,6 +13,9 @@ class LoginController extends Controller
 {
 	public function index()
 	{
+		if (Auth::check()) {
+			return redirect()->route('cars.index');
+		}
 		return view('login');
 	}
 
